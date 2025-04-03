@@ -8,7 +8,7 @@ export default function ReservationForm() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto py-12 px-4">
+    <div id='reservation' className="max-w-6xl mx-auto py-12 px-4">
       <h2 className="text-3xl font-bold text-center mb-12">Haga su Reserva</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
         <div>

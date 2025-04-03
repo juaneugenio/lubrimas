@@ -5,13 +5,18 @@ import autoprefixer from 'autoprefixer'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/lubrimas/', //line for GitHub Pages
+  base: process.env.NODE_ENV === 'production' ? '/lubrimas/' : '/',
   css: {
     postcss: {
       plugins: [
         tailwindcss,
         autoprefixer
       ]
+    }
+  },
+  server: {
+    headers: {
+      'Permissions-Policy': 'interest-cohort=()'
     }
   }
 })
