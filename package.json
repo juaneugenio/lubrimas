@@ -1,6 +1,10 @@
 {
   "name": "lubrimas",
   "private": true,
+  "packageManager": "pnpm@8.6.5",
+  "description": "Lubrimas Lubricadora  y lavadora de autos, carros, camiones.",
+  "author": "Eugenio & Lubrimas",
+  "license": "MIT",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
