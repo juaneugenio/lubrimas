@@ -24,13 +24,23 @@ const Brands = () => {
               }}
               className="flex justify-center items-center"
             >
-              <div className="w-32 h-20 flex items-center justify-center border border-gray-200 rounded-lg p-2">
+              <motion.div 
+                className="h-24 flex items-center justify-center border border-gray-200 rounded-lg p-2"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { 
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10
+                  }
+                }}
+              >
                 <img 
                   src={brand.logo} 
                   alt={brand.name} 
-                  className="max-h-16 max-w-[100px] object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                  className='object-contain h-full w-full'
                 />
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>

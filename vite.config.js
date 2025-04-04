@@ -6,6 +6,11 @@ import autoprefixer from 'autoprefixer'
 export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/lubrimas/' : '/',
+  build: {
+    assetsDir: 'assets',
+    outDir: 'dist',
+    emptyOutDir: true
+  },
   css: {
     postcss: {
       plugins: [
