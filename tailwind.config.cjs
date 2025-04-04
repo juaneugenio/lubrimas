@@ -6,9 +6,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Outfit', 'system-ui', 'sans-serif'], // Outfit with system fallback
+        sans: ['Outfit', 'system-ui', 'sans-serif'],
+      },
+      colors: {
+        primary: '#385898',
       },
     },
   },
   plugins: [],
+  corePlugins: {
+    preflight: true,
+  }
 }

@@ -37,7 +37,7 @@ export const brands = [
   },
   {
     id: 8,
-    name: 'Reanult',
+    name: 'Renault',
     logo: 'images/brands/renault-logo.svg'
   },
   {

@@ -36,9 +36,17 @@ const Brands = () => {
                 }}
               >
                 <img 
-                  src={brand.logo} 
+                  src={`/images/brands/${brand.name.toLocaleLowerCase()}-logo.svg`} 
                   alt={brand.name} 
                   className='object-contain h-full w-full'
+                  onError={(e) => {
+                    if (!e.target.src.endsWith('placeholder-logo.svg')) {
+                      e.target.src = "/images/placeholder-logo.svg";
+                      e.target.alt = `${brand.name} logo no disponible`;
+                    } else {
+                      e.target.style.display = 'none'; // Hide if placeholder also fails
+                    }
+                  }}
                 />
               </motion.div>
             </motion.div>
