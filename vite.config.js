@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   base: process.env.NODE_ENV === 'production' ? '/lubrimas/' : '/',
   build: {
-    assetsDir: 'assets',
+    assetsDir:`assets/${process.env.TIMESTAMP || 'build'}`,
     outDir: 'dist',
     emptyOutDir: true,
     rollupOptions: {

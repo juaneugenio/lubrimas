@@ -25,6 +25,10 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build
+      - name: Add cache-busting timestamp
+        run: |
+          TIMESTAMP=$(date +%s)
+          echo "TIMESTAMP=$TIMESTAMP" >> $GITHUB_ENV
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
