@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Copy, X, Check } from 'lucide-react';
 import { Dialog } from '@headlessui/react';
 import toast from 'react-hot-toast';
+import { motion } from 'framer-motion';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -64,16 +65,23 @@ const Nav = () => {
   };
 
   return (
-    <>
-      <div className='flex text-amber-50'>
+    <motion.div
+      initial={{ y: 20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ 
+        duration: 0.5,
+        ease: "easeOut"
+      }}
+    >
+      <div className='flex text-amber-50 bg-blue-950/90 backdrop-blur-sm shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] w-full'>
         {/* Contact Section */}
-        <div className="flex-1 flex flex-col items-end py-4 pr-4 border-r border-t border-gray-300 cursor-pointer group hover:bg-blue-950 transition-colors duration-300 ease-in-out" onClick={handlePhoneClick}>
+        <div className="flex-1 flex flex-col items-end py-4 pr-4 border-r border-t border-gray-300 cursor-pointer group hover:bg-blue-900 transition-colors duration-500 ease-in-out" onClick={handlePhoneClick}>
           <h3 className="font-bold mb-1.5 text-amber-50 group-hover:text-orange-500 transition-colors duration-300 ease-in-out">Contáctanos</h3>
           <span className='no-underline md:text-lg hover:underline text-amber-50 group-hover:text-orange-500 transition-colors duration-300 ease-in-out'>{telephone}</span>
         </div>
 
         {/* Ubication Section */}
-        <div className="flex-1 flex flex-col items-start pl-4 py-4 pr-2 border-t border-gray-300 cursor-pointer group hover:bg-blue-950 transition-colors duration-300 ease-in-out" onClick={handleAddressClick}>
+        <div className="flex-1 flex flex-col items-start pl-4 py-4 pr-2 border-t border-gray-300 cursor-pointer group hover:bg-blue-900 transition-colors duration-300 ease-in-out" onClick={handleAddressClick}>
           <h3 className="font-bold mb-1.5 text-amber-50 group-hover:text-orange-500 transition-colors duration-300 ease-in-out">Visítanos</h3>
           <span className="text-sm md:text-lg max-w-md mb-3 text-amber-50 group-hover:text-orange-500 transition-colors duration-300 ease-in-out">{address}</span>
         </div>
@@ -115,7 +123,7 @@ const Nav = () => {
           </Dialog.Panel>
         </div>
       </Dialog>
-    </>
+    </motion.div>
   );
 };
 

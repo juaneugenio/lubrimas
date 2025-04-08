@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../Nav/Nav';
+import { useNavPosition } from '../../hooks/useNavPosition';
 
 const Hero = () => {
   const navigate = useNavigate();
+  const { isFixed } = useNavPosition();
 
   const handleServicesClick = () => {
     navigate('#services');
@@ -12,7 +14,7 @@ const Hero = () => {
 
   return (
     <motion.header 
-      className="relative h-[99dvh] w-full overflow-hidden rounded-3xl flex flex-col justify-center items-center"
+      className="hero-section relative h-[99dvh] w-full overflow-hidden rounded-2xl flex flex-col justify-center items-center mb-32"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
@@ -70,7 +72,7 @@ const Hero = () => {
       </div>
 
       {/* Nav positioned at the bottom */}
-      <div className="absolute bottom-0 w-full z-50">
+      <div className={`absolute ${isFixed ? 'fixed top-0 left-0 right-0' : 'bottom-0'} w-full z-50 transition-all duration-300`}>
         <Nav />
       </div>
     </motion.header>
