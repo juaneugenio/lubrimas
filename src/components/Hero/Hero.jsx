@@ -41,7 +41,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Mantén tu <span className="text-primary">carrito</span> siempre limpiecito
+            Mantén tu <span className="text-primary-color">carrito</span> siempre limpiecito
           </motion.h1>
           
           <motion.p
@@ -60,10 +60,10 @@ const Hero = () => {
           >
             <button
               onClick={handleServicesClick}
-              className="flex items-center font-bold p-0 bg-transparent border-none text-primary hover:text-blue-300 cursor-pointer transition-colors text-lg lg:text-2xl mx-auto"
+              className="flex items-center font-bold p-0 bg-transparent border-none text-primary-color hover:text-blue-300 cursor-pointer transition-colors text-lg lg:text-2xl mx-auto"
             >
               Escoge tu servicio
-              <ArrowRight className="ml-2 text-primary hover:text-blue-300" size={20} />
+              <ArrowRight className="ml-2 text-primary-color hover:text-blue-300" size={20} />
             </button>
           </motion.nav>
         </motion.section>
