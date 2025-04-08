@@ -1,21 +1,25 @@
 import React from 'react'
-import Hero from '../components/Hero/Hero'
-import Services from '../components/Services/Services'
-import Brands from '../components/Brands/Brands.jsx'
-import Contact from '../components/Contact/Contact'
-import ReservationForm from '../components/Reservation/ReservationForm'
+import { lazy, Suspense } from 'react'
 
-
+const Hero = lazy(() => import('../components/Hero/Hero'));
+const Services = lazy(() => import('../components/Services/Services'));
+const Brands = lazy(() => import('../components/Brands/Brands'));
+const Contact = lazy(() => import('../components/Contact/Contact'));
+const ReservationForm = lazy(() => import('../components/Reservation/ReservationForm'));
 
 const Home = () => {
   return (
     <div className="min-h-screen">
-
-      <Hero />
-      <Brands />
-      <Services />
-      <ReservationForm />
-      <Contact />
+      <Suspense fallback={<div className="h-screen bg-gray-100 animate-pulse"></div>}>
+        <Hero />
+      </Suspense>
+      
+      <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse"></div>}>
+        <Services />
+        <Brands />
+        <ReservationForm />
+        <Contact />
+      </Suspense>
     </div>
   )
 }

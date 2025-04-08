@@ -8,14 +8,11 @@ export default defineConfig({
   build: {
     assetsDir: 'assets',
     outDir: 'dist',
-    emptyOutDir: true
-  },
-  css: {
-    postcss: './postcss.config.cjs'
-  },
-  server: {
-    headers: {
-      'Permissions-Policy': 'geolocation=(self)'
+    emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name].[ext]'
+      }
     }
   }
 })

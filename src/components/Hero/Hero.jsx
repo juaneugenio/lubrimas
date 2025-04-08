@@ -1,8 +1,10 @@
+import heroBg from '/images/hero-carimg-bg.webp';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Nav from '../Nav/Nav';
 import { useNavPosition } from '../../hooks/useNavPosition';
+
 
 const Hero = () => {
   const navigate = useNavigate();
@@ -13,15 +15,11 @@ const Hero = () => {
   };
 
   return (
-    <motion.header 
-      className="hero-section relative h-[99dvh] w-full overflow-hidden rounded-2xl flex flex-col justify-center items-center mb-32"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-    >
+    <motion.header className="hero-section relative h-[99dvh] w-full overflow-hidden rounded-2xl flex flex-col justify-center items-center mb-12">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="/images/hero-carimg-bg.webp" 
+          src={heroBg} // Changed from string path to imported reference
           alt="Fondo de lavado de autos" 
           className="w-full h-full object-cover object-center"
         />
