@@ -12,7 +12,7 @@ const Hero = () => {
 
   return (
     <motion.header 
-      className="relative h-[100dvh] w-full overflow-hidden rounded-3xl flex flex-col justify-center items-center"
+      className="relative h-[99dvh] w-full overflow-hidden rounded-3xl flex flex-col justify-center items-center"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
@@ -70,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* Nav positioned at the bottom */}
-      <div className="absolute bottom-0 w-full">
+      <div className="absolute bottom-0 w-full z-50">
         <Nav />
       </div>
     </motion.header>
