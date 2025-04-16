@@ -27,3 +27,6 @@ Professional car wash and lubrication services landing page with admin dashboard
 - Framer Motion (animations)
 - React Icons
 
+# To consider after finishing this app
+- Implement the canonical URL in index.html foe SEO
+- Monitor your site's uptime with a free service like UptimeRobot.

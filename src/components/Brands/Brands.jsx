@@ -18,17 +18,17 @@ const Brands = () => {
     <section className="py-8 bg-sky-400 opacity-90 rounded-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Marcas que atendemos</h2>
-          <p className="text-lg text-gray-800 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-bold text-blue-950 mb-4">Marcas que atendemos</h2>
+          <p className="text-lg text-blue-950 max-w-2xl mx-auto">
             Trabajamos con todas las marcas de vehículos para garantizar un servicio de calidad
           </p>
         </div>
         
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
+        <div className="grid grid-cols-3 pb-10 md:grid-cols-4 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
           {brands.map((brand) => (
             <motion.div 
               key={brand.id}
-              className="flex flex-col items-center p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-sky-300"
+              className="flex flex-col items-center p-2 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 bg-sky-500"
               whileHover={{ scale: 1.02 }}
               transition={{ type: 'spring', stiffness: 400, damping: 10 }}
             >
@@ -41,7 +41,7 @@ const Brands = () => {
                   loading="lazy"
                 />
               </div>
-              <span className="text-xs mt-1 text-gray-600 font-medium">{brand.name}</span>
+              <span className="text-xs mt-1 text-sky-300 font-medium">{brand.name}</span>
             </motion.div>
           ))}
         </div>
