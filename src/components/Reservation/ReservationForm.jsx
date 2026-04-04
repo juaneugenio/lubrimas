@@ -8,7 +8,7 @@ export default function ReservationForm() {
     formState: { errors },
   } = useForm();
 
-  const WHATSAPP_NUMBER = "4917682557352";
+  const WHATSAPP_NUMBER = "593998278268";
 
   const onSubmit = (data) => {
     const text = `Hola Lubrimas! Quisiera realizar una reserva:
