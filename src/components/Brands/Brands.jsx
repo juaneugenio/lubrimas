@@ -15,7 +15,7 @@ const Brands = () => {
   };
 
   return (
-    <section className="py-8 bg-sky-400 opacity-90 rounded-2xl">
+    <section className="py-8 bg-sky-400/20 opacity-90 rounded-2xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold text-blue-950 mb-4">
@@ -44,9 +44,11 @@ const Brands = () => {
                   loading="lazy"
                 />
               </div>
-              <span className="text-xs mt-1 text-sky-300 font-semibold">
+
+              {/* Optional: Show brand name below the logo */}
+              {/* <span className="text-xs mt-1 text-sky-300 font-semibold">
                 {brand.name}
-              </span>
+              </span> */}
             </Motion.div>
           ))}
         </div>
